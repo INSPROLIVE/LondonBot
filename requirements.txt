@@ -1,0 +1,10 @@
+pandas
+numpy
+pytz
+ib_insync
+textual
+rich
+pyyaml
+requests
+matplotlib
+pytest
