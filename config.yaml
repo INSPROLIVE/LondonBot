@@ -1,0 +1,51 @@
+# Global configuration for london_breakout_bot
+mode: paper   # backtest | paper | live
+broker: ib    # ib
+
+# IB connection
+ib:
+  host: 127.0.0.1
+  port: 7497
+  client_id: 1
+  symbol: NQ
+  exchange: GLOBEX
+  currency: USD
+  expiry: ""  # leave blank or set YYYYMM for specific contract month
+
+# Risk & sizing
+initial_capital: 10000.0
+risk_mode: fixed    # fixed | percent | max_position
+risk_per_trade: 100.0
+risk_percent: 0.01
+max_position_value: 20000.0
+contract_multiplier: 10.0
+
+# Market params
+tick: 0.25
+tick_value: 5.0
+take_profit_rr: 2.0
+
+# Execution / slippage
+slippage_model: normal   # fixed | normal | exponential
+slippage_mean_ticks: 0.5
+slippage_std_ticks: 0.25
+latency_ms: 200
+
+# Commission
+commission_per_contract: 2.00   # per side
+commission_flat_per_trade: 0.0
+
+# Safety
+max_daily_loss: -1000.0
+allow_same_day_eod_exit: true
+
+# Logging / alerts
+log_file: logs/london_bot.log
+log_max_bytes: 2000000
+log_backup_count: 5
+slack_webhook_url: ""  # set your Slack incoming webhook URL to receive alerts
+
+# Dashboard
+dashboard:
+  enable_textual: true
+  refresh_seconds: 1
